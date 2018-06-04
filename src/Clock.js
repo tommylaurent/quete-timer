@@ -6,6 +6,10 @@ class Clock extends Component {
     this.state = { date: new Date() };
   }
 
+  componentWillMount() {
+    console.log("La création du composant va avoir lieu");
+  }
+
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000);
   }
@@ -18,6 +22,10 @@ class Clock extends Component {
     this.setState({
       date: new Date()
     });
+  }
+
+  componentDidUpdate() {
+    console.log("Le composant a été mis à jour");
   }
 
   render() {
